@@ -1,0 +1,27 @@
+FROM ubuntu:20.04 AS MAVEN_BUILD
+
+# Install java and maven
+RUN apt-get update && apt-get install -y \
+    openjdk-11-jre \
+    maven
+
+# Set environment variabe
+ENV JAVA_VERSION 11.0.7
+ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
+ENV PATH $JAVA_HOME/bin:$PATH
+
+# Print installed versions
+RUN java --version && mvn -v
+
+# Copy source code
+COPY pom.xml /build/
+COPY src /build/src/
+
+# build code 
+WORKDIR /build/
+RUN mvn package
+RUN ls target/
+RUN pwd
+
+#Execute Code
+ENTRYPOINT ["java", "-jar", "/build/target/spring-hello-1.0.0.jar"]
