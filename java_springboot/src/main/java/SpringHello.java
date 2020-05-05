@@ -11,6 +11,8 @@ public class SpringHello {
     @RequestMapping("/")
     String home() {
         return "Hello Hitesh Talihlyani!";
+        return "This is your first test Spring boot Application";
+        return "Good Job, Well done Keep Up";
     }
  
     public static void main(String[] args) throws Exception {
