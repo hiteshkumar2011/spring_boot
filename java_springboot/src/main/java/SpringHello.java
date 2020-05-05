@@ -10,7 +10,7 @@ public class SpringHello {
  
     @RequestMapping("/")
     String home() {
-        return "Hello Umair Naushad!";
+        return "Hello Hitesh Talihlyani!";
     }
  
     public static void main(String[] args) throws Exception {
