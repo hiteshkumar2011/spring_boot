@@ -10,7 +10,7 @@ public class SpringHello {
  
     @RequestMapping("/")
     String home() {
-        return "Hello Hitesh Talihlyani!This is your first test Spring boot Application,Good Job"; 
+        return "Hello Hitesh Talihlyani! \n This is your first test Spring boot Application \n Good Job"; 
     }
  
     public static void main(String[] args) throws Exception {
